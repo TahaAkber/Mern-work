@@ -1,15 +1,16 @@
-#heading {
-  text-align: center;
-  text-transform: uppercase;
+* {
+  margin: 0;
+  padding: 0;
 }
-#paragraph {
-  font-family: "Times New Roman", Times, serif;
+.navbar {
+  height: 60px;
+  background-color: black;
+  color: white;
 }
-#outer {
+button {
+  background-color: rgb(255, 153, 0);
+}
+#logo {
+  color: rgb(255, 153, 0);
   font-size: 25px;
-}
-#inner {
-  font-size: 10px;
-  height: 50px;
-  border: 2px solid black;
 }
