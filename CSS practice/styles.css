@@ -2,18 +2,35 @@
   margin: 0;
   padding: 0;
 }
-.navbar {
-  height: 60px;
-  background-color: black;
+div {
+  display: inline;
   color: white;
 }
-button {
-  background-color: rgb(255, 153, 0);
+.head {
+  display: block;
+  background-color: black;
+  height: 50px;
+  width: auto;
+  padding-top: 10px;
 }
-#logo {
-  color: rgb(255, 153, 0);
-  font-size: 25px;
+.container {
+  margin: 150px;
 }
-a {
-  margin-right: 300px;
+.content {
+  display: inline-block;
+  height: 800px;
+  width: auto;
+}
+.contentitem {
+  color: black;
+  display: inline-block;
+  border: 2px solid black;
+  padding-left: 20px;
+  padding-top: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+p {
+  display: inline;
 }
