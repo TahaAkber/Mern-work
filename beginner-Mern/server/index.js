@@ -2,12 +2,16 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Usermodel = require("./models/Users");
+//allow us to connect api react frontend without errors
+const cors = require("cors");
 
 mongoose.connect(
   "mongodb+srv://Tahaakber:lumia123@cluster0.vnsu7wc.mongodb.net/Merntutorial?retryWrites=true&w=majority"
 );
+//created both get and post data from backend to frontend
 //since we posting data to backend with jsonfile we need to use express that takes data its a builtin feature of express
 app.use(express.json());
+app.use(cors());
 app.get("/getuser", async (req, res) => {
   try {
     const result = await Usermodel.find({});
