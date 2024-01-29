@@ -30,6 +30,11 @@ app.post("/createuser", async (req, res) => {
   //showing data to frontend using res.json();
   res.json(user);
 });
+app.put("/api/users/:id", (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  res.json(id);
+});
 app.listen(3001, () => {
   console.log(`Server is running on port ${3001}`);
 });
