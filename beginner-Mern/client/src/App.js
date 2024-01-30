@@ -23,6 +23,7 @@ function App() {
       alert("UserCreated");
     });
   };
+
   return (
     <div className="App">
       <div className="box">
