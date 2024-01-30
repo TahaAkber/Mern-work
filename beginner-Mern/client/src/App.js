@@ -25,6 +25,39 @@ function App() {
   };
   return (
     <div className="App">
+      <div className="box">
+        <div className="input">
+          <input
+            type="text"
+            placeholder="Enter Name"
+            onChange={(e) => {
+              setname(e.target.value);
+            }}
+          />
+          <input
+            type="number"
+            placeholder="Age"
+            onChange={(e) => {
+              setage(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Enter username"
+            onChange={(e) => {
+              setusername(e.target.value);
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => {
+              addtobackend();
+            }}
+          >
+            Click to Create
+          </button>
+        </div>
+      </div>
       <div className="data">
         {users.map((i) => {
           return (
@@ -32,40 +65,12 @@ function App() {
               <h1>{i.name}</h1>
               <h3>{i.age}</h3>
               <h6>{i.username}</h6>
+              <div className="button">
+                <button type="button">UPDATE</button>
+              </div>
             </div>
           );
         })}
-      </div>
-      <div className="input">
-        <input
-          type="text"
-          placeholder="Enter Name"
-          onChange={(e) => {
-            setname(e.target.value);
-          }}
-        />
-        <input
-          type="number"
-          placeholder="Age"
-          onChange={(e) => {
-            setage(e.target.value);
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Enter username"
-          onChange={(e) => {
-            setusername(e.target.value);
-          }}
-        />
-        <button
-          type="button"
-          onClick={() => {
-            addtobackend();
-          }}
-        >
-          Click to Create
-        </button>
       </div>
     </div>
   );
