@@ -50,6 +50,7 @@ function App() {
           />
           <button
             type="button"
+            className="button-85"
             onClick={() => {
               addtobackend();
             }}
@@ -58,19 +59,27 @@ function App() {
           </button>
         </div>
       </div>
-      <div className="data">
-        {users.map((i) => {
-          return (
-            <div>
-              <h1>{i.name}</h1>
-              <h3>{i.age}</h3>
-              <h6>{i.username}</h6>
-              <div className="button">
-                <button type="button">UPDATE</button>
+      <div className="parent">
+        <div className="data">
+          {users.map((i) => {
+            return (
+              <div>
+                <h1>{i.name}</h1>
+                <h3>{i.age}</h3>
+                <h6>{i.username}</h6>
+                <div className="button">
+                  <button
+                    type="button"
+                    className="button-85"
+                    style={{ marginRight: 0 }}
+                  >
+                    UPDATE
+                  </button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
