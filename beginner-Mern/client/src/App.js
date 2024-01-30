@@ -8,18 +8,23 @@ function App() {
   const [age, setage] = useState(0);
   const [username, setusername] = useState("");
 
-  useEffect(() => {
+  function getUsers() {
     Axios.get("http://localhost:3001/user").then((response) => {
       setusers(response.data);
     });
+  }
+
+  useEffect(() => {
+    getUsers();
   }, []);
+
   const addtobackend = async () => {
     await Axios.post("http://localhost:3001/user", {
       name: name,
       age: age,
       username: username,
     }).then((response) => {
-      setusers([...users, { name: name, age: age, username: username }]);
+      getUsers();
       alert("UserCreated");
     });
   };
@@ -29,7 +34,7 @@ function App() {
       age: age,
       username: username,
     }).then((response) => {
-      setusers([{ name: name, age: age, username: username }]);
+      getUsers();
       alert("UserUpdated");
     });
   };
