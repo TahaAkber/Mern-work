@@ -44,6 +44,16 @@ app.put("/user/:userId", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+app.delete("/user/:deleteuserId", async (req, res) => {
+  try {
+    const deleteuserId = req.params.deleteuserId;
+    const body = req.body;
+    const result = await Usermodel.deleteOne({ _id: deleteuserId }, body);
+    res.json(result);
+  } catch (err) {
+    console.log("ERROR Deleting", err);
+  }
+});
 //here we pass an object that we need to insert into database
 app.post("/user", async (req, res) => {
   const user = req.body;
