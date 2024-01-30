@@ -9,12 +9,12 @@ function App() {
   const [username, setusername] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getuser").then((response) => {
+    Axios.get("http://localhost:3001/user").then((response) => {
       setusers(response.data);
     });
   }, []);
   const addtobackend = async () => {
-    await Axios.post("http://localhost:3001/createuser", {
+    await Axios.post("http://localhost:3001/user", {
       name: name,
       age: age,
       username: username,
@@ -23,7 +23,16 @@ function App() {
       alert("UserCreated");
     });
   };
-
+  const updatedata = async (id) => {
+    await Axios.put("http://localhost:3001/user/" + id, {
+      name: name,
+      age: age,
+      username: username,
+    }).then((response) => {
+      setusers([{ name: name, age: age, username: username }]);
+      alert("UserUpdated");
+    });
+  };
   return (
     <div className="App">
       <div className="box">
@@ -73,6 +82,9 @@ function App() {
                     type="button"
                     className="button-85"
                     style={{ marginRight: 0 }}
+                    onClick={() => {
+                      updatedata(i._id);
+                    }}
                   >
                     UPDATE
                   </button>
