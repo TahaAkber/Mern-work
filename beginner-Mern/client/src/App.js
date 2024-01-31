@@ -38,6 +38,12 @@ function App() {
       alert("UserUpdated");
     });
   };
+  const deletedata = async (id) => {
+    await Axios.delete("http://localhost:3001/user/" + id).then((response) => {
+      getUsers();
+      alert("userDeleted");
+    });
+  };
   return (
     <div className="App">
       <div className="box">
@@ -92,6 +98,16 @@ function App() {
                     }}
                   >
                     UPDATE
+                  </button>
+                  <button
+                    type="button"
+                    className="button-85"
+                    style={{ margin: 8 }}
+                    onClick={() => {
+                      deletedata(i._id);
+                    }}
+                  >
+                    Delete
                   </button>
                 </div>
               </div>
