@@ -15,5 +15,19 @@ app.get("/student", async (req, res) => {
     console.log("Error is that", error);
   }
 });
+app.post("/student", async (req, res) => {
+  try {
+    const student = new Studentmodel({
+      name: "Taha",
+      courses: [
+        { courseId: 1, name: "English" },
+        { courseId: 2, name: "Urdu" },
+      ],
+    });
+    await student.save();
+  } catch (error) {
+    console.error("cannot insert", error);
+  }
+});
 
 app.listen(3001, console.log("Server has been started", 3001));

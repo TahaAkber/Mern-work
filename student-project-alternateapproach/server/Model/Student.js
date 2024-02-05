@@ -1,23 +1,20 @@
 const mongoose = require("mongoose");
-const arraytype = mongoose.Schema({
-  Id: {
+const course = mongoose.Schema({
+  courseId: {
     type: Number,
     required: true,
-  },
-  course: {
-    type: String,
-    required: true,
-  },
-});
-const schema = new mongoose.Schema({
-  studentId: {
-    type: Number,
   },
   name: {
     type: String,
     required: true,
   },
-  courses: [arraytype],
+});
+const schema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  courses: [course],
 });
 
 const Studentmodel = mongoose.model("students", schema);
