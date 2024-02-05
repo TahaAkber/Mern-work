@@ -15,16 +15,20 @@ app.get("/student", async (req, res) => {
     console.log("Error is that", error);
   }
 });
+//get course by id
+app.get("/student/:studentId/course/:courseId", async (req, res) => {
+  const studentId = req.params.studentId;
+  const data = await Studentmodel.findById(studentId);
+  const result = data.courses.filter(c => c._id === req.params.courseId);
+  res.json(data);
+  console.log(result);
+});
 app.post("/student", async (req, res) => {
   try {
-    const student = new Studentmodel({
-      name: "Taha",
-      courses: [
-        { courseId: 1, name: "English" },
-        { courseId: 2, name: "Urdu" },
-      ],
-    });
-    await student.save();
+    const data = req.body;
+    const newuser = new Studentmodel(data);
+    await newuser.save();
+    res.json(newuser);
   } catch (error) {
     console.error("cannot insert", error);
   }
