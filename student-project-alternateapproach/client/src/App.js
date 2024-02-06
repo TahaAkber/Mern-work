@@ -12,16 +12,16 @@ function App() {
     getdata();
   }, []);
   const [name, setname] = useState("");
-  const [course, setcourses] = useState([]);
-  const postdata = () => {
-    axios
+  const [course, setcourses] = useState({ courseId: null, name: "" });
+  const postdata = async () => {
+    await axios
       .post("http://localhost:3001/student", {
         name: name,
-        courses: [{ course }],
+        courses: [course],
       })
       .then((response) => {
         getdata();
-        console.log(response.data);
+        alert("posted");
       });
   };
   return (
@@ -39,7 +39,40 @@ function App() {
           </div>
         </div>
       ))}
-      <button onClick={postdata()}>test</button>
+      <div>
+        <input
+          placeholder="Student Name"
+          onChange={(e) => {
+            setname(e.target.value);
+          }}
+        />
+        <input
+          placeholder="Course Name"
+          onChange={(e) => {
+            setcourses((prevCourse) => ({
+              ...prevCourse,
+              name: e.target.value,
+            }));
+          }}
+        />
+        <input
+          placeholder="Course Number"
+          type="number"
+          onChange={(e) => {
+            setcourses((prevCourse) => ({
+              ...prevCourse,
+              courseId: e.target.value,
+            }));
+          }}
+        />
+      </div>
+      <button
+        onClick={() => {
+          postdata();
+        }}
+      >
+        testing
+      </button>
     </div>
   );
 }
