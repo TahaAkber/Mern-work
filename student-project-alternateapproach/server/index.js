@@ -56,5 +56,10 @@ app.post("/student", async (req, res) => {
     console.error("cannot insert", error);
   }
 });
-
+app.put("/student/:studentId", async (req, res) => {
+  const studentId = req.params.studentId;
+  const body = req.body;
+  const result = await Studentmodel.updateOne({ _id: studentId }, body);
+  res.json(result);
+});
 app.listen(3001, console.log("Server has been started", 3001));
