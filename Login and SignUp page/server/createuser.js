@@ -28,6 +28,5 @@ router.post(
     }
   }
 );
-router.get("/createuser", body("name").);
 
 module.exports = router;
