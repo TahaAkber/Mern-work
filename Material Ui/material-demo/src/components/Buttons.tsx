@@ -16,6 +16,12 @@ import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 import Sendicon from "@mui/icons-material/Send";
 const Buttons = () => {
   const [format, setformat] = useState<String[]>([]);
+  const buttonhandle = (
+    event: React.MouseEvent<HTMLElement>,
+    updatedformat: string[]
+  ) => {
+    setformat(updatedformat);
+  };
   return (
     <Stack spacing={4}>
       <Stack spacing={10} direction="row">
@@ -65,7 +71,7 @@ const Buttons = () => {
         </ButtonGroup>
       </Stack>
       <Stack direction="row">
-        <ToggleButtonGroup>
+        <ToggleButtonGroup value={format} onChange={buttonhandle}>
           <ToggleButton value="italic" aria-label="italic">
             <FormatItalicIcon />
           </ToggleButton>
