@@ -1,6 +1,18 @@
 import React from "react";
-import { Button, IconButton, ButtonGroup } from "@mui/material";
+import {
+  Button,
+  IconButton,
+  ButtonGroup,
+  ToggleButtonGroup,
+  ToggleButton,
+} from "@mui/material";
 import Stack from "@mui/material/Stack";
+
+import FormatItalicIcon from "@mui/icons-material/FormatItalic";
+import FormatboldIcon from "@mui/icons-material/FormatBold";
+
+import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
+
 import Sendicon from "@mui/icons-material/Send";
 const Buttons = () => {
   return (
@@ -40,11 +52,29 @@ const Buttons = () => {
       </Stack>
 
       <Stack direction="row">
-        <ButtonGroup variant="outlined" size="small" color="secondary">
+        <ButtonGroup
+          variant="outlined"
+          size="small"
+          color="secondary"
+          aria-label="Button aligns group"
+        >
           <Button>Left</Button>
           <Button>Center</Button>
           <Button>Right</Button>
         </ButtonGroup>
+      </Stack>
+      <Stack direction="row">
+        <ToggleButtonGroup>
+          <ToggleButton value="italic">
+            <FormatItalicIcon />
+          </ToggleButton>
+          <ToggleButton value="bold">
+            <FormatboldIcon />
+          </ToggleButton>
+          <ToggleButton value="Underlined">
+            <FormatUnderlinedIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Stack>
     </Stack>
   );
