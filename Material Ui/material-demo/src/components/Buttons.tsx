@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   IconButton,
@@ -15,6 +15,7 @@ import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 
 import Sendicon from "@mui/icons-material/Send";
 const Buttons = () => {
+  const [format, setformat] = useState<String[]>([]);
   return (
     <Stack spacing={4}>
       <Stack spacing={10} direction="row">
@@ -65,13 +66,13 @@ const Buttons = () => {
       </Stack>
       <Stack direction="row">
         <ToggleButtonGroup>
-          <ToggleButton value="italic">
+          <ToggleButton value="italic" aria-label="italic">
             <FormatItalicIcon />
           </ToggleButton>
-          <ToggleButton value="bold">
+          <ToggleButton value="bold" aria-label="bold">
             <FormatboldIcon />
           </ToggleButton>
-          <ToggleButton value="Underlined">
+          <ToggleButton value="underlined" aria-label="underlined">
             <FormatUnderlinedIcon />
           </ToggleButton>
         </ToggleButtonGroup>
