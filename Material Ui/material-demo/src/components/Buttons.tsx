@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, IconButton } from "@mui/material";
+import { Button, IconButton, ButtonGroup } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Sendicon from "@mui/icons-material/Send";
 const Buttons = () => {
@@ -38,10 +38,13 @@ const Buttons = () => {
           Send
         </Button>
       </Stack>
-      <Stack spacing={3}>
-        <IconButton aria-label="send">
-          <Sendicon />
-        </IconButton>
+
+      <Stack direction="row">
+        <ButtonGroup variant="outlined" size="small" color="secondary">
+          <Button>Left</Button>
+          <Button>Center</Button>
+          <Button>Right</Button>
+        </ButtonGroup>
       </Stack>
     </Stack>
   );
