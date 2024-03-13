@@ -8,19 +8,23 @@ const Textarea = () => {
         <TextField label="Name" variant="outlined" color="primary" />
         <TextField label="Name" variant="standard" color="success" />
       </Stack>
-      <Stack spacing={4}>
+      <Stack spacing={2} direction="row">
         <TextField
           label="Amount"
-          inputProps={{
-            StartAdornment: <InputAdornment position="start">$</InputAdornment>,
+          InputProps={{
+            startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
         />
         <TextField
           label="Weight"
-          inputProps={{
+          InputProps={{
             endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
           }}
         />
+        <TextField
+          label="read Only"
+          InputProps={{ readOnly: true }}
+        ></TextField>
       </Stack>
     </Stack>
   );
