@@ -72,7 +72,11 @@ const Buttons = () => {
         </ButtonGroup>
       </Stack>
       <Stack direction="row">
-        <ToggleButtonGroup value={format} onChange={buttonhandle}>
+        <ToggleButtonGroup
+          value={format}
+          onChange={buttonhandle}
+          color="success"
+        >
           <ToggleButton value="italic" aria-label="italic">
             <FormatItalicIcon />
           </ToggleButton>
