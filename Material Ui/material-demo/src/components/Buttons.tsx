@@ -16,6 +16,7 @@ import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 import Sendicon from "@mui/icons-material/Send";
 const Buttons = () => {
   const [format, setformat] = useState<String[]>([]);
+  console.log({ format });
   const buttonhandle = (
     event: React.MouseEvent<HTMLElement>,
     updatedformat: string[]
