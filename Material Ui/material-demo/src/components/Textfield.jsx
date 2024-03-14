@@ -4,9 +4,15 @@ const Textarea = () => {
   return (
     <Stack spacing={2}>
       <Stack direction="row" spacing={4}>
-        <TextField label="Name" variant="filled" color="secondary" />
-        <TextField label="Name" variant="outlined" color="primary" />
-        <TextField label="Name" variant="standard" color="success" />
+        <TextField label="Name" variant="filled" color="secondary" required />
+        <TextField label="Name" variant="outlined" color="primary" required />
+        <TextField
+          label="Name"
+          variant="standard"
+          color="success"
+          required
+          error
+        />
       </Stack>
       <Stack spacing={2} direction="row">
         <TextField

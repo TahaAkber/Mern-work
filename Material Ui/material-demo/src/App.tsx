@@ -7,9 +7,9 @@ import Textarea from "./components/Textfield";
 function App() {
   return (
     <div className="App">
-      <Multitypography />
+      {/* <Multitypography />
       <Buttons />
-      <Textarea />
+      <Textarea /> */}
     </div>
   );
 }
