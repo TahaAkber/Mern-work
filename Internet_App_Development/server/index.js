@@ -30,6 +30,25 @@ app.post("/user", async (req, res) => {
     console.log("Error in posting Data");
   }
 });
+app.put("/user/:userId", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const result = await Usermodel.updateOne({ _id: userId });
+    res.json(result);
+  } catch (err) {
+    console.error("Error retrieving users:", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+app.delete("/user/:deleteuserId", async (req, res) => {
+  try {
+    const deleteuserId = req.params.deleteuserId;
+    const result = await Usermodel.deleteOne({ _id: deleteuserId });
+    res.json(result);
+  } catch (err) {
+    console.log("ERROR Deleting", err);
+  }
+});
 app.listen(3001, () => {
-  console.log("server is running at port ", 3001);
+  console.log("server is running at port :", 3001);
 });
