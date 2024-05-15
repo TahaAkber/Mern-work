@@ -1,3 +1,22 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
+const mongodb = require("mongodb+srv://tahaakber:lumia123@cluster0.o5sdrdh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect(
+  "mongodb+srv://tahaakber:lumia123@cluster0.o5sdrdh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+);
+app.use(express.json());
+app.use(cors());
 
+app.get("/user", async (res, req) => {
+  try {
+    const result = await Usermodel.find({});
+    res.json(result);
+  } catch (err) {
+    console.error("Error retrieving users:", err);
+    res.sta;
+  }
+});
+app.listen(5000, () => {
+  console.log("server is running at port ", 5000);
+});
