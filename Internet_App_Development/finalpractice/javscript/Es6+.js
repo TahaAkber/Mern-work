@@ -31,4 +31,22 @@
 // cardetails(car);
 // cardetails2(car);
 
+// let modelno = car.model;
+// let name = car.name;
 
+// console.log(modelno);
+// let newname;
+// newname = "Civic";
+// car.name = newname;
+// console.log(car.name);
+
+// let newsubjects = {
+//   first: "pst",
+//   second: "urdu",
+//   third: "ics1",
+// };
+
+// let subjects = ["math", "english", "physics"];
+// let [firstSubject, secondsubject, thirdsubject] = subjects;
+
+// console.log(firstSubject, secondsubject, thirdsubject);

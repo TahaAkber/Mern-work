@@ -1,1 +1,1 @@
-car
+console.log(modelno);
