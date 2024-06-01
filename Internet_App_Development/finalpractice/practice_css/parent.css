@@ -1,0 +1,52 @@
+.taha {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  margin: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* .absolute {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 12px;
+  bottom: 2px;
+  left: 10px;
+  right: 14px;
+  background-color: aqua;
+} */
+
+/* .absolute {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  background-color: aqua;
+} */
+
+/* .absolute {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 70px;
+  left: 30px;
+  background-color: aqua;
+} */
+
+/* .absolute {
+  width: 100px;
+  height: 100px;
+  position: sticky;
+  top: 70px;
+  left: 30px;
+  background-color: aqua;
+} */
