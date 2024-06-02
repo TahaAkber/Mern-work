@@ -50,3 +50,33 @@
 // let [firstSubject, secondsubject, thirdsubject] = subjects;
 
 // console.log(firstSubject, secondsubject, thirdsubject);
+
+//LOOP PRACTICE
+// let sum = 0;
+// let numb = [1, 2, 3, 4, 5, 6, 7, 8];
+// for (let i = 0; i < numb.length; i++) {
+//   sum = numb[i] + sum;
+// }
+// console.log(sum);
+
+//Spread OPERATOR
+
+// let list = [10, 20, 30];
+// let newlist = [30, 40, 50, ...list];
+
+// function testing() {
+//   console.log({ ...list, list: newlist });
+//   console.log(newlist);
+// }
+// testing();
+
+//rest operator
+// function sum(...nums) {
+//   let total = 0;
+//   for (let num of nums) {
+//     total += num;
+//   }
+//   console.log(total);
+// }
+
+// sum(10, 20, 40, 50);
