@@ -15,8 +15,9 @@ app.get("/user", async (req, res) => {
   try {
     const result = await Usermodel.find({});
     res.json(result);
+    console.log(result);
   } catch (err) {
-    console.error("Error retrieving users:", err);
+    console.log("Error retrieving users:", err);
     res.status(500).json({ error: "Internal server error" }); // Added response status and message
   }
 });
