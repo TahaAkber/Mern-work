@@ -1,9 +1,5 @@
-function sum(...nums) {
-  let total = 0;
-  for (let num of nums) {
-    total += num;
-  }
-  console.log(total);
+function testing() {
+  console.log({  list: newlist });
+  console.log(newlist);
 }
-
-sum(10, 20, 40, 50);
+testing();
